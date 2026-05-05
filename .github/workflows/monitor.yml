@@ -1,0 +1,32 @@
+name: Train delay monitor
+
+on:
+  schedule:
+    - cron: "*/10 5-22 * * *"  # toutes les 10min de 5h à 22h
+  workflow_dispatch:            # lancement manuel possible
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Restore state
+        uses: actions/cache@v4
+        with:
+          path: state.json
+          key: train-state-${{ github.run_id }}
+          restore-keys: train-state-
+
+      - name: Run monitor
+        env:
+          SNCF_API_KEY: ${{ secrets.SNCF_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python monitor.py
