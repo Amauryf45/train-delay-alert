@@ -89,6 +89,11 @@ def save_state(alerted: set[str]):
 
 
 def run():
+    if os.getenv("TEST_MODE"):
+        send_telegram("TEST: bot Telegram OK - train TGV8412 retard +45min Marne-la-Vallee -> Marseille")
+        print("Test notification sent.")
+        return
+
     alerted = load_state()
     today = datetime.now().strftime("%Y-%m-%d")
 

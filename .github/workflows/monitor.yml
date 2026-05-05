@@ -4,6 +4,8 @@ on:
   schedule:
     - cron: "*/10 5-22 * * *"  # toutes les 10min de 5h à 22h
   workflow_dispatch:            # lancement manuel possible
+  push:
+    branches: [test-telegram]
 
 jobs:
   check:
@@ -30,3 +32,5 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python monitor.py
+        env:
+          TEST_MODE: ${{ github.ref == 'refs/heads/test-telegram' && 'true' || '' }}
