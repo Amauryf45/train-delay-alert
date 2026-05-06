@@ -2,7 +2,7 @@ name: Train delay monitor
 
 on:
   schedule:
-    - cron: "*/10 5-22 * * *"  # toutes les 10min de 5h à 22h
+    - cron: "*/20 3-20 * * *"  # toutes les 20min de 5h à 22h Paris (UTC+2)
   workflow_dispatch:            # lancement manuel possible
   push:
     branches: [test-telegram]
