@@ -21,6 +21,7 @@ MONITORED_STATIONS = [
     {"id": "stop_area:SNCF:87223263", "name": "Lille Europe"},
     {"id": "stop_area:SNCF:87751008", "name": "Marseille Saint-Charles"},
     {"id": "stop_area:SNCF:87756056", "name": "Nice Ville"},
+    {"id": "stop_area:SNCF:87686006", "name": "Paris Gare de Lyon"},
 ]
 
 LONG_DISTANCE_DESTINATIONS = [
