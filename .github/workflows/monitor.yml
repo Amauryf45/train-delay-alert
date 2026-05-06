@@ -34,6 +34,6 @@ jobs:
           TEST_MODE: ${{ github.ref == 'refs/heads/test-telegram' && 'true' || '' }}
         run: |
           for i in 1 2 3; do
-            python monitor.py
+            python monitor.py || echo "Run $i failed, continuing"
             [ $i -lt 3 ] && sleep 1200
           done
