@@ -2,7 +2,7 @@ name: Train delay monitor
 
 on:
   schedule:
-    - cron: "*/20 3-20 * * *"  # toutes les 20min de 5h à 22h Paris (UTC+2)
+    - cron: "0 3-20 * * *"  # 1x/heure, boucle interne toutes les 20min (5h-22h Paris)
   workflow_dispatch:            # lancement manuel possible
   push:
     branches: [test-telegram]
@@ -32,4 +32,8 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TEST_MODE: ${{ github.ref == 'refs/heads/test-telegram' && 'true' || '' }}
-        run: python monitor.py
+        run: |
+          for i in 1 2 3; do
+            python monitor.py
+            [ $i -lt 3 ] && sleep 1200
+          done
