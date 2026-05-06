@@ -35,5 +35,5 @@ jobs:
         run: |
           for i in 1 2 3; do
             python monitor.py || echo "Run $i failed, continuing"
-            [ $i -lt 3 ] && sleep 1200
+            if [ "$i" -lt 3 ]; then sleep 1200; fi
           done
