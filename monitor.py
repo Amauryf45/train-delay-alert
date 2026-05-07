@@ -11,7 +11,7 @@ SNCF_API_KEY = os.getenv("SNCF_API_KEY")
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
-DELAY_THRESHOLD_MINUTES = 1
+DELAY_THRESHOLD_MINUTES = 30
 STATE_FILE = Path("state.json")
 
 MONITORED_STATIONS = [
@@ -21,7 +21,6 @@ MONITORED_STATIONS = [
     {"id": "stop_area:SNCF:87223263", "name": "Lille Europe"},
     {"id": "stop_area:SNCF:87751008", "name": "Marseille Saint-Charles"},
     {"id": "stop_area:SNCF:87756056", "name": "Nice Ville"},
-    {"id": "stop_area:SNCF:87686006", "name": "Paris Gare de Lyon"},
 ]
 
 LONG_DISTANCE_DESTINATIONS = [
