@@ -15,12 +15,37 @@ DELAY_THRESHOLD_MINUTES = 30
 STATE_FILE = Path("state.json")
 
 MONITORED_STATIONS = [
+    # Paris & Île-de-France
+    {"id": "stop_area:SNCF:87686006", "name": "Paris Gare de Lyon"},
+    {"id": "stop_area:SNCF:87391003", "name": "Paris Montparnasse"},
+    {"id": "stop_area:SNCF:87113001", "name": "Paris Est"},
+    {"id": "stop_area:SNCF:87271007", "name": "Paris Nord"},
     {"id": "stop_area:SNCF:87001479", "name": "Marne-la-Vallée Chessy"},
     {"id": "stop_area:SNCF:87271460", "name": "CDG TGV"},
+    # Nord
     {"id": "stop_area:SNCF:87286005", "name": "Lille Flandres"},
     {"id": "stop_area:SNCF:87223263", "name": "Lille Europe"},
+    # Est
+    {"id": "stop_area:SNCF:87212027", "name": "Strasbourg"},
+    {"id": "stop_area:SNCF:87192039", "name": "Metz"},
+    {"id": "stop_area:SNCF:87141002", "name": "Nancy"},
+    {"id": "stop_area:SNCF:87342002", "name": "Besançon Franche-Comté TGV"},
+    # Sud-Est
+    {"id": "stop_area:SNCF:87723197", "name": "Lyon Part-Dieu"},
+    {"id": "stop_area:SNCF:87758037", "name": "Valence TGV"},
+    {"id": "stop_area:SNCF:87318964", "name": "Avignon TGV"},
+    {"id": "stop_area:SNCF:87319012", "name": "Aix-en-Provence TGV"},
     {"id": "stop_area:SNCF:87751008", "name": "Marseille Saint-Charles"},
     {"id": "stop_area:SNCF:87756056", "name": "Nice Ville"},
+    {"id": "stop_area:SNCF:87773002", "name": "Montpellier Saint-Roch"},
+    {"id": "stop_area:SNCF:87779000", "name": "Perpignan"},
+    # Sud-Ouest
+    {"id": "stop_area:SNCF:87581009", "name": "Bordeaux Saint-Jean"},
+    {"id": "stop_area:SNCF:87611004", "name": "Toulouse Matabiau"},
+    # Ouest
+    {"id": "stop_area:SNCF:87481002", "name": "Nantes"},
+    {"id": "stop_area:SNCF:87471003", "name": "Rennes"},
+    {"id": "stop_area:SNCF:87396002", "name": "Le Mans"},
 ]
 
 LONG_DISTANCE_DESTINATIONS = [
